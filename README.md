@@ -35,7 +35,7 @@ A: Salting password when hashing makes it even harder to crack and prevented hac
 Q: Can't I just embed database connection to my executable and give it to my users?
 A: No matter how many encryption to put on the database credential, it will be cracked. So it's best to just make an API for it
   
-Q: What makes you mad about this?
+Q: What makes you mad about this?  
 A: [https://www.youtube.com/watch?v=fA9_KzJSrNQ](https://www.youtube.com/watch?v=fA9_KzJSrNQ)  
   
 Q: Why shouldn't I send separate message for `Invalid Password` or `User not found`
