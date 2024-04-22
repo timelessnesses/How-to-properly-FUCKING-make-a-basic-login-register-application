@@ -40,3 +40,6 @@ A: [https://www.youtube.com/watch?v=fA9_KzJSrNQ](https://www.youtube.com/watch?v
   
 Q: Why shouldn't I send separate message for `Invalid Password` or `User not found`  
 A: So you wouldn't give hints to hackers who is bruteforcing random usernames and passwords.
+  
+Q: Why shouldn't I reconnect database every time there's new request coming in?
+A: Your database will be filled with connections that could've been reused instead.
