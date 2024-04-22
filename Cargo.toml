@@ -1,0 +1,20 @@
+[package]
+name = "how-to-properly-fucking-make-a-login-register-app"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4.5.1"
+bcrypt = "0.15.1"
+deadpool-postgres = "0.13.0"
+derive_more = "0.99.17"
+dotenv = "0.15.0"
+env_logger = "0.11.3"
+json = "0.12.4"
+log = "0.4.21"
+serde = { version = "1.0.198", features = ["derive"] }
+tokio-pg-mapper = "0.2.0"
+tokio-pg-mapper-derive = "0.2.0"
+tokio-postgres = "0.7.10"
