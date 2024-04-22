@@ -21,6 +21,8 @@ pub enum Errors {
     UserNotFound,
     /// Invalid password
     InvalidPassword,
+    /// Taken username
+    UsernameTaken
 }
 
 impl std::error::Error for Errors {}
@@ -35,6 +37,7 @@ impl actix_web::ResponseError for Errors {
                     },
                     4,
                 )),
+            Errors::UsernameTaken => actix_web::HttpResponse::Conflict().finish(),
             _ => actix_web::HttpResponse::InternalServerError().finish(),
         }
     }

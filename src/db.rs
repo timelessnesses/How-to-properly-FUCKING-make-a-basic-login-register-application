@@ -10,6 +10,9 @@ pub async fn register_user(
     username: &str,
     plain_password: &str,
 ) -> Returns<()> {
+    if check_exists_user(client, username).await? {
+        return Err(crate::errors::Errors::UsernameTaken)
+    }
     let hashed_password = bcrypt::hash(plain_password, bcrypt::DEFAULT_COST)?;
     client
         .execute(
@@ -40,4 +43,18 @@ pub async fn login_user(
         return Ok(());
     }
     return Err(crate::errors::Errors::InvalidPassword);
+}
+
+/// Checks if the username exists in database
+pub async fn check_exists_user(
+    client: &deadpool_postgres::Client,
+    username: &str,
+) -> Returns<bool> {
+    let user_row = client
+        .query_one(
+            "SELECT * FROM users WHERE username = $1",
+            &[&username],
+        )
+        .await?;
+    return Ok(user_row.is_empty())
 }
