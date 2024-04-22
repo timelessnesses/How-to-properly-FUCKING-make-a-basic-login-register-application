@@ -38,5 +38,5 @@ A: No matter how many encryption to put on the database credential, it will be c
 Q: What makes you mad about this?  
 A: [https://www.youtube.com/watch?v=fA9_KzJSrNQ](https://www.youtube.com/watch?v=fA9_KzJSrNQ)  
   
-Q: Why shouldn't I send separate message for `Invalid Password` or `User not found`
+Q: Why shouldn't I send separate message for `Invalid Password` or `User not found`  
 A: So you wouldn't give hints to hackers who is bruteforcing random usernames and passwords.
